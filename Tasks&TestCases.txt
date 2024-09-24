@@ -1,0 +1,125 @@
+"""
+### Task: Banking System Project in Python
+
+**Objective:**
+Develop a basic banking system in Python that allows users to create accounts, deposit money, withdraw funds, and check account balances. The system will maintain account data and ensure basic error handling.
+
+**Requirements:**
+
+1. **Account Creation:**
+   - Users should be able to create a new bank account by providing their name, a unique account number, and an initial deposit amount.
+   - Ensure that the account number is unique for each account.
+
+2. **Deposit Functionality:**
+   - Allow users to deposit money into their accounts.
+   - Validate that the deposit amount is positive.
+
+3. **Withdrawal Functionality:**
+   - Users should be able to withdraw money from their accounts.
+   - Ensure that they cannot withdraw more than the available balance.
+   - Validate that the withdrawal amount is positive.
+
+4. **Balance Inquiry:**
+   - Provide users the ability to check their current account balance.
+
+
+This task outlines the core functionalities needed to create a simple banking system in Python.
+
+
+-------------Utilized the below topics-------------------------------------------------------------------------
+PART 01
+
+1.  Class 
+2.  Object
+3.  Class Variable 
+4.  Class Method 
+5.  Constructor 
+6.  Constructor With Params & Constructor Without Params
+
+PART 02
+1. Inheritance 
+2. Single Inheritance 
+3. Multiple Inheritance 
+4. Multilevel Inheritance 
+5. Overriding 
+6. Abstraction 
+7. Overloading 
+8. Polymorphism 
+
+PART 03
+- Static Methods 
+
+
+PART 04
+Access Modifier
+- Public 
+- Protected 
+- Private 
+
+
+PART 05 Encapsulation
+
+### Test Cases for Banking System Project
+
+**Test Case 1: Successful Account Creation**
+- **Input:**
+  - User Name: "John Doe"
+  - Account Number: "12345"
+  - Initial Deposit: 500
+- **Expected Output:**
+  - Account creation success message.
+  - Initial balance: 500.
+  - Unique account number validation passed.
+- **Scenario Tested:**
+  - Verifying account creation with valid data and initial deposit.
+
+---
+
+**Test Case 2: Deposit Positive Amount**
+- **Input:**
+  - Account Number: "12345"
+  - Deposit Amount: 300
+- **Expected Output:**
+  - Deposit success message.
+  - Updated balance: 800.
+- **Scenario Tested:**
+  - Ensuring successful deposit and correct balance update for a positive amount.
+
+---
+
+**Test Case 3: Withdrawal Exceeding Balance**
+- **Input:**
+  - Account Number: "12345"
+  - Withdrawal Amount: 1000 (exceeds current balance of 800)
+- **Expected Output:**
+  - Error message: "Insufficient funds."
+  - Balance remains unchanged at 800.
+- **Scenario Tested:**
+  - Ensuring withdrawal is not allowed if the requested amount exceeds the account balance.
+
+---
+
+**Test Case 4: Invalid Deposit Amount (Negative)**
+- **Input:**
+  - Account Number: "12345"
+  - Deposit Amount: -200
+- **Expected Output:**
+  - Error message: "Invalid deposit amount. Amount must be positive."
+  - Balance remains unchanged at 800.
+- **Scenario Tested:**
+  - Checking that negative deposits are rejected, and the balance is not affected.
+
+---
+
+**Test Case 5: Duplicate Account Number**
+- **Input:**
+  - User Name: "Jane Doe"
+  - Account Number: "12345" (already exists)
+  - Initial Deposit: 600
+- **Expected Output:**
+  - Error message: "Account number already exists. Please choose a unique account number."
+  - No new account is created.
+- **Scenario Tested:**
+  - Ensuring that account numbers must be unique and preventing duplicate account creation.
+
+"""
