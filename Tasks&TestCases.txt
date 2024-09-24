@@ -2,7 +2,9 @@
 ### Task: Banking System Project in Python
 
 **Objective:**
-Develop a basic banking system in Python that allows users to create accounts, deposit money, withdraw funds, and check account balances. The system will maintain account data and ensure basic error handling.
+Develop a basic banking system in Python that allows users to create accounts, 
+deposit money, withdraw funds, and check account balances. 
+The system will maintain account data and ensure basic error handling.
 
 **Requirements:**
 
