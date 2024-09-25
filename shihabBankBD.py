@@ -1,29 +1,46 @@
-"""
-Make Class shihabBankBD
+class BankAccount:
+    accounts = {}
 
-constructor takes name(str), unique_account_num(int only) and initial_diposit(float)
-methods Account Creation, Deposit Functionality, Withdrawal Functionality, Balance Inquiry
-
-"""
-
-class shihabBankBD:
-
-    def __init__(self, name, initial_diposit, unique_account_num):
+    def __init__(self, name, account_number, initial_deposit):
         self.name = name
-        self.unique_account_num = int(unique_account_num)
-        self.initial_diposit = float(initial_diposit)
+        self.account_number = account_number
+        self.balance = initial_deposit
 
-    def account_create(self):
-        if len(str(self.unique_account_num)) == 6 and self.initial_diposit >= 3000.00:
-            return (f"Account is created for {self.name}, with an account number of {self.unique_account_num}, "
-      f"and a mandatory deposit of {self.initial_diposit:.2f}")
-        else:
-            return ("Please follow instructions properly!!")
-        
-    
+    @classmethod
+    def create_account(cls, name, account_number, initial_deposit):
+        if account_number in cls.accounts:
+            return "Account number already exists. Please choose a unique account number."
+        if initial_deposit < 0:
+            return "Initial deposit must be positive."
+        cls.accounts[account_number] = cls(name, account_number, initial_deposit)
+        return f"Account created for {name} with initial balance of {initial_deposit:.2f}"
 
+    def deposit(self, amount):
+        if amount <= 0:
+            return "Deposit amount must be positive."
+        self.balance += amount
+        return f"Deposit successful. New balance: {self.balance:.2f}"
 
-obj = shihabBankBD("Shihab", 3000.00, 123456)
-print(obj.account_create())
+    def withdraw(self, amount):
+        if amount <= 0:
+            return "Withdrawal amount must be positive."
+        if amount > self.balance:
+            return "Insufficient funds."
+        self.balance -= amount
+        return f"Withdrawal successful. Remaining balance: {self.balance:.2f}"
 
+    def check_balance(self):
+        return f"Current balance: {self.balance:.2f}"
+
+"""# Test cases
+account_1 = BankAccount.create_account("John Doe", "123456", 500.00)
+print(account_1)
+
+account = BankAccount.accounts["123456"]
+print(account.deposit(300))
+print(account.withdraw(1000))  # Should return "Insufficient funds"
+print(account.check_balance())
+
+account_2 = BankAccount.create_account("Jane Doe", "123456", 600.00)  # Duplicate account test
+print(account_2)"""
 
